@@ -1,0 +1,80 @@
+#+TITLE: git tutorial
+#+AUTHOR: Sorger lab and LSP memebers
+#+STARTUP: align fold nodlcheck hidestars oddeven lognotestate
+#+LANGUAGE: en
+
+* getting started
+
+0) *create an ssh identity*
+   #+begin_src sh 
+   cd ~/
+   ssh-keygen -t rsa
+   chmod 600 ~/.ssh/id_rsa
+   chmod 700 ~/.ssh
+   #+end_src
+
+1) *provide ssh identity to your GitHub account*
+
+   The steps below will happen either in your web browser or in your
+   terminal, as indicated.
+
+   0) browser: log in to your GitHub account
+   1) browser: visit the page https://github.com/settings/ssh
+   2) browser: press Add SSH Key button
+   3) terminal:
+
+      - Linux
+
+        #+begin_src sh
+        xclip -selection clipboard < ~/.ssh/id_rsa.pub
+        #+end_src
+
+      - Darwin 
+
+        #+begin_src sh
+        pbcopy < ~/.ssh/id_rsa.pub
+        #+end_src
+
+      - Windows
+        1. at the Git Bash (MINGW64) terminal:
+
+           #+begin_src sh
+           cat ~/.ssh/id_rsa.pub
+           #+end_src
+
+        2. select the output of the previous command (by dragging over
+           it with the mouse)
+        3. right-click on the terminal window
+        4. select =Copy=
+
+   4) browser: paste clipboard contents into the "Key" blank
+
+   5) browser: enter an identifying label in the "Title" blank
+      (e.g. the "username@host" string at the end of the text you just
+      pasted into the "Key" blank.
+
+2) *clone the training repo*
+
+   #+begin_src sh 
+   mkdir -p ~/.tmp/sandbox
+   cd ~/.tmp/sandbox
+   rm -rf training
+   git clone git+ssh://git@github.com/sorgerlab/training.git
+   #+end_src
+
+3) *one-time setup for tutorial*
+
+   #+begin_src sh 
+   cd ~/.tmp/sandbox/training
+   source tutorial/git/src/setup.sh
+   #+end_src
+
+4) *check that everything worked properly*
+
+   If all went well, you should be able to run the following commands
+   (in the order shown) without errors.
+
+   #+begin_src sh 
+   cd ~/.tmp/sandbox/scikit-learn
+   gitk --all &
+   #+end_src
