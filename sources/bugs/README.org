@@ -1,0 +1,4 @@
+# -*- mode: fundamental -*-
+#+TITLE: Bugs
+
+Test.

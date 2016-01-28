@@ -1,0 +1,8 @@
+# -*- mode: fundamental -*-
+#+TITLE: Patches
+
+Test.
+* TODO [#A] 
+  :PROPERTIES:
+  :CAPTURED: [2012-08-12 Sun 09:02]
+  :END:
