@@ -1,0 +1,18 @@
+#+TITLE:      In this sandbox we don't play nice
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
+#+LANGUAGE:   en
+#+OPTIONS:    H:3 num:nil toc:t \n:nil ::t |:t ^:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+
+
+This repository is for experimenting with git and GitHub.
+
+It is public repository in that it can be forked and cloned anytime, but I treat it as if it were a private repository.
+
+In particular,
+
+- I routinely update the repository with
+   : git push --force origin <SOME-BRANCH>
+- I close all pull requests automatically;
+- I have disabled GitHub's =Issues= feature.
+
+Also, FWIW: there's no =master= branch, or anything like it.  It's all topic branches.
